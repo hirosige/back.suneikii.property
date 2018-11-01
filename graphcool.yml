@@ -1,0 +1,61 @@
+types:
+  - ./types/post.graphql
+  - ./types/user.graphql
+
+
+functions:
+  signup:
+    type: resolver
+    schema: src/email-password/signup.graphql
+    handler:
+      code: src/email-password/signup.ts
+
+  authenticate:
+    type: resolver
+    schema: src/email-password/authenticate.graphql
+    handler:
+      code: src/email-password/authenticate.ts
+
+  loggedInUser:
+    type: resolver
+    schema: src/email-password/loggedInUser.graphql
+    handler:
+      code: src/email-password/loggedInUser.ts
+
+  hello:
+    handler:
+      code: src/hello.js
+    type: resolver
+    schema: src/hello.graphql
+
+  syncAlgolia:
+    handler:
+      code: src/algolia/syncAlgolia.ts
+    type: subscription
+    query:  src/newPost.graphql
+
+  sayHelloPost:
+    type: operationAfter
+    operation: Post.create
+    handler:
+      code: src/hooks/sayHelloPost.js
+
+  emailNotification:
+    type: subscription
+    query: src/subscriptions/emailNotification.graphql
+    handler:
+      code:
+        src: ./src/subscriptions/emailNotification.js
+        environment:
+          ALGOLIA_APP_ID: ${env:ALGOLIA_APP_ID}
+          ALGOLIA_API_KEY: ${env:ALGOLIA_API_KEY}
+          ALGOLIA_INDEX_NM: ${env:ALGOLIA_INDEX_NM}
+
+  latestPosts:
+    type: resolver
+    schema: src/resolvers/latestPosts.graphql
+    handler:
+      code: src/resolvers/latestPosts.js
+
+permissions:
+  - operation: "*"

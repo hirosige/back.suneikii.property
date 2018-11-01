@@ -1,0 +1,7 @@
+type Post @model {
+  id: ID! @isUnique
+  description: String!
+  imageUrl: String!
+
+  author: User! @relation(name: "UserPosts")
+}
