@@ -1,11 +1,9 @@
 type User @model {
   id: ID! @isUnique
-
+  email: String
+  auth0UserId: String @isUnique
   createdAt: DateTime!
   updatedAt: DateTime!
-
-  email: String! @isUnique
-  password: String!
 
   posts: [Post!]! @relation(name: "UserPosts")
 }

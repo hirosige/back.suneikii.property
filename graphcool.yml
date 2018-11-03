@@ -2,60 +2,38 @@ types:
   - ./types/post.graphql
   - ./types/user.graphql
 
-
 functions:
-  signup:
-    type: resolver
-    schema: src/email-password/signup.graphql
-    handler:
-      code: src/email-password/signup.ts
-
   authenticate:
+    handler:
+      code:
+        src: ./functions/resolvers/auth0/auth0Authentication.js
+        environment:
+          AUTH0_DOMAIN: ${env:AUTH0_DOMAIN}
+          AUTH0_API_IDENTIFIER: ${env:AUTH0_API_IDENTIFIER}
     type: resolver
-    schema: src/email-password/authenticate.graphql
-    handler:
-      code: src/email-password/authenticate.ts
-
-  loggedInUser:
-    type: resolver
-    schema: src/email-password/loggedInUser.graphql
-    handler:
-      code: src/email-password/loggedInUser.ts
-
-  hello:
-    handler:
-      code: src/hello.js
-    type: resolver
-    schema: src/hello.graphql
-
-  syncAlgolia:
-    handler:
-      code: src/algolia/syncAlgolia.ts
-    type: subscription
-    query:  src/newPost.graphql
+    schema: ./functions/resolvers/auth0/auth0Authentication.graphql
 
   sayHelloPost:
     type: operationAfter
     operation: Post.create
     handler:
-      code: src/hooks/sayHelloPost.js
+      code: functions/hooks/sayHelloPost.js
 
-  emailNotification:
+  syncAlgolia:
     type: subscription
-    query: src/subscriptions/emailNotification.graphql
+    query: functions/subscriptions/algolia/userSync.graphql
     handler:
       code:
-        src: ./src/subscriptions/emailNotification.js
+        src: ./functions/subscriptions/algolia/userSync.js
         environment:
           ALGOLIA_APP_ID: ${env:ALGOLIA_APP_ID}
           ALGOLIA_API_KEY: ${env:ALGOLIA_API_KEY}
-          ALGOLIA_INDEX_NM: ${env:ALGOLIA_INDEX_NM}
 
   latestPosts:
     type: resolver
-    schema: src/resolvers/latestPosts.graphql
+    schema: functions/resolvers/latestPosts.graphql
     handler:
-      code: src/resolvers/latestPosts.js
+      code: functions/resolvers/latestPosts.js
 
 permissions:
   - operation: "*"

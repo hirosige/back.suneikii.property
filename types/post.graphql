@@ -5,3 +5,5 @@ type Post @model {
 
   author: User! @relation(name: "UserPosts")
 }
+
+

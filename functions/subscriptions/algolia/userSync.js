@@ -5,23 +5,28 @@ const algolia = algoliasearch(
   process.env.ALGOLIA_API_KEY,
 )
 
-const index = algolia.initIndex(process.env.ALGOLIA_INDEX_NM)
+const index = algolia.initIndex('users')
 
 export default event => {
-  const { email } = event.data.User.node
-
-  console.log(event)
+  const {
+    id,
+    email,
+    auth0UserId
+  } = event.data.User.node
 
   index.addObjects([{
-    email
-  }], (err, content) => {
-    if (err) {
-      console.log(err)
-      return false
+    id,
+    email,
+    auth0UserId
+  }], (error, content) => {
+    if (error) {
+      return { error }
     }
   })
 
   console.log(event.data.User.node)
 
-  return true
+  return {
+    event
+  }
 }
