@@ -2,8 +2,25 @@ type User @model {
   id: ID! @isUnique
   email: String
   auth0UserId: String @isUnique
+  role: ROLE! @defaultValue(value: USER)
+
   createdAt: DateTime!
   updatedAt: DateTime!
 
   posts: [Post!]! @relation(name: "UserPosts")
+  profile: Profile @relation(name: "UserProfile")
+}
+
+type Profile @model {
+  id: ID! @isUnique
+  firstName: String
+  lastName: String
+  address: String
+  tel: String
+  subscriptionEmail: String
+
+  createdAt: DateTime!
+  updatedAt: DateTime!
+
+  user: User! @relation(name: "UserProfile")
 }

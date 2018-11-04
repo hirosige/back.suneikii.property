@@ -1,6 +1,7 @@
 types:
   - ./types/post.graphql
   - ./types/user.graphql
+  - ./enums/role.graphql
 
 functions:
   authenticate:
@@ -36,4 +37,31 @@ functions:
       code: functions/resolvers/latestPosts.js
 
 permissions:
-  - operation: "*"
+
+  # Posts
+  - operation: Post.read
+    authenticated: true
+  - operation: Post.create
+    authenticated: true
+  - operation: Post.update
+    authenticated: true
+  - operation: Post.delete
+    authenticated: true
+
+  # Users
+  - operation: User.read
+    authenticated: true
+  - operation: User.create
+  - operation: User.update
+    authenticated: true
+  - operation: User.delete
+    authenticated: true
+
+  # Profiles
+  - operation: Profile.read
+  - operation: Profile.create
+  - operation: Profile.update
+
+  # Relations
+  - operation: UserProfile.connect
+    authenticated: true
