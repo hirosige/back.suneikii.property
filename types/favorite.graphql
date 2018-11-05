@@ -5,4 +5,9 @@ type Favorite @model {
   updatedAt: DateTime!
 
   user: User! @relation(name: "UserFavorites")
+  condominiums: [Condominium!]! @relation(name: "FavoriteCondominiums")
+  apartments: [Apartment!]! @relation(name: "FavoriteApartments")
+  houses: [House!]! @relation(name: "FavoriteHouses")
+  townHouses: [TownHouse!]! @relation(name: "FavoriteTownHouses")
+  lands: [Land!]! @relation(name: "FavoriteLands")
 }

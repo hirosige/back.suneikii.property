@@ -1,0 +1,15 @@
+{
+  "providers": [
+    {
+      "name": "Suneikii Property",
+      "introduction": "We are Suneikii",
+      "siteUrl": "http://suneikii.com",
+      "address": "onnut",
+      "tel": "03-3333-3333",
+      "fax": "03-3333-3333",
+      "certificate": "certified",
+      "workingTime": "9:00 ~ 18:00",
+      "holidays": "Mon-Fri"
+    }
+  ]
+}

@@ -7,6 +7,11 @@ types:
   - ./types/condominium.graphql
   - ./types/provider.graphql
   - ./types/advantage.graphql
+  - ./types/apartment.graphql
+  - ./types/land.graphql
+  - ./types/house.graphql
+  - ./types/town_house.graphql
+  - ./types/contact.graphql
   - ./enums/role.graphql
   - ./enums/room_type.graphql
 

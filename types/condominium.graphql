@@ -1,16 +1,19 @@
 type Condominium @model {
   id: ID! @isUnique
-  name: String!
+  name: String! @isUnique
   rentFee: Float
   purchasePrice: Float
   deposit: Float
   transportation: String!
   utilityFee: Float
   address: String!
+  latitude: Float!
+  longitude: Float!
   roomType: ROOM_TYPE! @defaultValue(value: STUDIO)
   roomSize: String!
   recommendations: String
   isPublished: Boolean! @defaultValue(value: "false")
+  isAvailable: Boolean! @defaultValue(value: "false")
   remarks: String
   appliances: String
   stories: Int
@@ -25,5 +28,6 @@ type Condominium @model {
   district: District! @relation(name: "DistrictCondominiums")
   provider: Provider! @relation(name: "ProviderCondominiums")
 
+  favorites: [Favorite!]! @relation(name: "FavoriteCondominiums")
   advantages: [Advantage!]! @relation(name: "CondominiumsAdvantages")
 }

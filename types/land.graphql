@@ -1,0 +1,32 @@
+type Land @model {
+  id: ID! @isUnique
+  name: String! @isUnique
+  rentFee: Float
+  purchasePrice: Float
+  deposit: Float
+  transportation: String!
+  utilityFee: Float
+  address: String!
+  latitude: Float!
+  longitude: Float!
+  spage: String!
+  recommendations: String
+  isPublished: Boolean! @defaultValue(value: "false")
+  isAvailable: Boolean! @defaultValue(value: "false")
+  remarks: String
+  appliances: String
+  stories: Int
+  updateFee: Float
+  propertyId: String!
+
+  createdAt: DateTime!
+  updatedAt: DateTime!
+
+  country: Country! @relation(name: "CountryLands")
+  province: Province! @relation(name: "ProvinceLands")
+  district: District! @relation(name: "DistrictLands")
+  provider: Provider! @relation(name: "ProviderLands")
+
+  favorites: [Favorite!]! @relation(name: "FavoriteLands")
+  advantages: [Advantage!]! @relation(name: "LandsAdvantages")
+}

@@ -1,7 +1,14 @@
 type Advantage @model {
   id: ID! @isUnique
-  name: String!
+  name: String! @isUnique
   description: String!
 
+  createdAt: DateTime!
+  updatedAt: DateTime!
+
   condominiums: [Condominium!]! @relation(name: "CondominiumsAdvantages")
+  apartments: [Apartment!]! @relation(name: "ApartmentsAdvantages")
+  houses: [House!]! @relation(name: "HousesAdvantages")
+  townHouses: [TownHouse!]! @relation(name: "TownHousesAdvantages")
+  lands: [Land!]! @relation(name: "LandsAdvantages")
 }

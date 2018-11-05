@@ -9,6 +9,10 @@ type Country @model {
 
   provinces: [Province!]! @relation(name: "CountryProvinces")
   condominiums: [Condominium!]! @relation(name: "CountryCondominiums")
+  apartments: [Apartment!]! @relation(name: "CountryApartments")
+  houses: [House!]! @relation(name: "CountryHouses")
+  townHouses: [TownHouse!]! @relation(name: "CountryTownHouses")
+  lands: [Land!]! @relation(name: "CountryLands")
 }
 
 type Province @model {
@@ -23,6 +27,10 @@ type Province @model {
   country: Country! @relation(name: "CountryProvinces")
   districts: [District!]! @relation(name: "ProvinceDistricts")
   condominiums: [Condominium!]! @relation(name: "ProvinceCondominiums")
+  apartments: [Apartment!]! @relation(name: "ProvinceApartments")
+  houses: [House!]! @relation(name: "ProvinceHouses")
+  townHouses: [TownHouse!]! @relation(name: "ProvinceTownHouses")
+  lands: [Land!]! @relation(name: "ProvinceLands")
 }
 
 type District @model {
@@ -36,4 +44,8 @@ type District @model {
 
   province: Province! @relation(name: "ProvinceDistricts")
   condominiums: [Condominium!]! @relation(name: "DistrictCondominiums")
+  apartments: [Apartment!]! @relation(name: "DistrictApartments")
+  houses: [House!]! @relation(name: "DistrictHouses")
+  townHouses: [TownHouse!]! @relation(name: "DistrictTownHouses")
+  lands: [Land!]! @relation(name: "DistrictLands")
 }

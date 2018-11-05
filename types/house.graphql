@@ -1,0 +1,33 @@
+type House @model {
+  id: ID! @isUnique
+  name: String! @isUnique
+  rentFee: Float
+  purchasePrice: Float
+  deposit: Float
+  transportation: String!
+  utilityFee: Float
+  address: String!
+  latitude: Float!
+  longitude: Float!
+  roomType: ROOM_TYPE! @defaultValue(value: STUDIO)
+  roomSize: String!
+  recommendations: String
+  isPublished: Boolean! @defaultValue(value: "false")
+  isAvailable: Boolean! @defaultValue(value: "false")
+  remarks: String
+  appliances: String
+  stories: Int
+  updateFee: Float
+  propertyId: String!
+
+  createdAt: DateTime!
+  updatedAt: DateTime!
+
+  country: Country! @relation(name: "CountryHouses")
+  province: Province! @relation(name: "ProvinceHouses")
+  district: District! @relation(name: "DistrictHouses")
+  provider: Provider! @relation(name: "ProviderHouses")
+
+  favorites: [Favorite!]! @relation(name: "FavoriteHouses")
+  advantages: [Advantage!]! @relation(name: "HousesAdvantages")
+}

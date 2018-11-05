@@ -1,0 +1,33 @@
+type TownHouse @model {
+  id: ID! @isUnique
+  name: String! @isUnique
+  rentFee: Float
+  purchasePrice: Float
+  deposit: Float
+  transportation: String!
+  utilityFee: Float
+  address: String!
+  latitude: Float!
+  longitude: Float!
+  roomType: ROOM_TYPE! @defaultValue(value: STUDIO)
+  roomSize: String!
+  recommendations: String
+  isPublished: Boolean! @defaultValue(value: "false")
+  isAvailable: Boolean! @defaultValue(value: "false")
+  remarks: String
+  appliances: String
+  stories: Int
+  updateFee: Float
+  propertyId: String!
+
+  createdAt: DateTime!
+  updatedAt: DateTime!
+
+  country: Country! @relation(name: "CountryTownHouses")
+  province: Province! @relation(name: "ProvinceTownHouses")
+  district: District! @relation(name: "DistrictTownHouses")
+  provider: Provider! @relation(name: "ProviderTownHouses")
+
+  favorites: [Favorite!]! @relation(name: "FavoriteTownHouses")
+  advantages: [Advantage!]! @relation(name: "TownHousesAdvantages")
+}
