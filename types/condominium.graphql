@@ -1,0 +1,29 @@
+type Condominium @model {
+  id: ID! @isUnique
+  name: String!
+  rentFee: Float
+  purchasePrice: Float
+  deposit: Float
+  transportation: String!
+  utilityFee: Float
+  address: String!
+  roomType: ROOM_TYPE! @defaultValue(value: STUDIO)
+  roomSize: String!
+  recommendations: String
+  isPublished: Boolean! @defaultValue(value: "false")
+  remarks: String
+  appliances: String
+  stories: Int
+  updateFee: Float
+  propertyId: String!
+
+  createdAt: DateTime!
+  updatedAt: DateTime!
+
+  country: Country! @relation(name: "CountryCondominiums")
+  province: Province! @relation(name: "ProvinceCondominiums")
+  district: District! @relation(name: "DistrictCondominiums")
+  provider: Provider! @relation(name: "ProviderCondominiums")
+
+  advantages: [Advantage!]! @relation(name: "CondominiumsAdvantages")
+}

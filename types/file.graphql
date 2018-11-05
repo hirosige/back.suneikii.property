@@ -1,0 +1,4 @@
+type File @model {
+  id: ID! @isUnique
+  url: String!
+}

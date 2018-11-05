@@ -1,6 +1,6 @@
 enum ROLE {
   ADMIN
-  EDITOR
-  AUTHOR
+  STAFF
+  OWNER
   USER
 }

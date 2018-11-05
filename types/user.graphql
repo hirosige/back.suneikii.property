@@ -9,6 +9,7 @@ type User @model {
 
   posts: [Post!]! @relation(name: "UserPosts")
   profile: Profile @relation(name: "UserProfile")
+  favorites: [Favorite!]! @relation(name: "UserFavorites")
 }
 
 type Profile @model {

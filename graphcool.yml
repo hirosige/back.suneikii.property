@@ -1,7 +1,14 @@
 types:
   - ./types/post.graphql
   - ./types/user.graphql
+  - ./types/file.graphql
+  - ./types/favorite.graphql
+  - ./types/area.graphql
+  - ./types/condominium.graphql
+  - ./types/provider.graphql
+  - ./types/advantage.graphql
   - ./enums/role.graphql
+  - ./enums/room_type.graphql
 
 functions:
   authenticate:
@@ -36,7 +43,23 @@ functions:
     handler:
       code: functions/resolvers/latestPosts.js
 
+  validateProfile:
+    type: operationBefore
+    operation: Profile.create
+    handler:
+      code: functions/validators/validateProfile.js
+
 permissions:
+
+  # Countries
+  - operation: Country.read
+    authenticated: true
+  - operation: Country.create
+    authenticated: true
+  - operation: Country.update
+    authenticated: true
+  - operation: Country.delete
+    authenticated: true
 
   # Posts
   - operation: Post.read
@@ -64,4 +87,6 @@ permissions:
 
   # Relations
   - operation: UserProfile.connect
+    authenticated: true
+  - operation: UserPosts.connect
     authenticated: true

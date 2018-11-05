@@ -1,0 +1,7 @@
+type Advantage @model {
+  id: ID! @isUnique
+  name: String!
+  description: String!
+
+  condominiums: [Condominium!]! @relation(name: "CondominiumsAdvantages")
+}

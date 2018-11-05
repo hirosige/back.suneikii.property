@@ -1,0 +1,71 @@
+{
+  "countries": [
+    {
+      "name": "Thailand",
+      "code": "th",
+      "slug": "thailand",
+      "provinces": [
+        { "name": "Bangkok",
+          "code": "bkk",
+          "slug": "bangkok",
+          "districts": [
+            { "name": "Bang Bon", "code": "bang_bon", "slug": "bang_bon" },
+            { "name": "Bang Kapi", "code": "bang_kapi", "slug": "bang_kapi" },
+            { "name": "Bang Khae", "code": "bang_khae", "slug": "bang_khae" },
+            { "name": "Bang Khen", "code": "bang_khen", "slug": "bang_khen" },
+            { "name": "Bang Kho Laem", "code": "bang_kho_laem", "slug": "bang_kho_laem" },
+            { "name": "Bang Khun Thian", "code": "bang_khun_thian", "slug": "bang_khun_thian" },
+            { "name": "Bang Na", "code": "bang_na", "slug": "bang_na" },
+            { "name": "Bang Phlat", "code": "bang_phlat", "slug": "bang_phlat" },
+            { "name": "Bang Rak", "code": "bang_rak", "slug": "bang_rak" },
+            { "name": "Bang Sue", "code": "bang_sue", "slug": "bang_sue" },
+            { "name": "Bangkok Noi", "code": "bangkok_noi", "slug": "bangkok_noi" },
+            { "name": "Bangkok Yai", "code": "bangkok_yai", "slug": "bangkok_yai" },
+            { "name": "Bueng Kum", "code": "bueng_kum", "slug": "bueng_kum" },
+            { "name": "Chatuchak", "code": "chatuchak", "slug": "chatuchak" },
+            { "name": "Chom Thong", "code": "chom_thong", "slug": "chom_thong" },
+            { "name": "Din Daeng", "code": "din_daeng", "slug": "din_daeng" },
+            { "name": "Don Mueang", "code": "don_mueang", "slug": "don_mueang" },
+            { "name": "Dusit", "code": "dusit", "slug": "dusit" },
+            { "name": "Huai Khwang", "code": "huai_khwang", "slug": "huai_khwang" },
+            { "name": "Khan Na Yao", "code": "khan_na_yao", "slug": "khan_na_yao" },
+            { "name": "Khlong Sam Wa", "code": "khlong_sam_wa", "slug": "khlong_sam_wa" },
+            { "name": "Khlong San", "code": "khlong_san", "slug": "khlong_san" },
+            { "name": "Khlong Toei", "code": "khlong_toei", "slug": "khlong_toei" },
+            { "name": "Lak Si", "code": "lak_si", "slug": "lak_si" },
+            { "name": "Lat Krabang", "code": "lat_krabang", "slug": "lat_krabang" },
+            { "name": "Lat Phrao", "code": "lat_phrao", "slug": "lat_phrao" },
+            { "name": "Min Buri", "code": "min_buri", "slug": "min_buri" },
+            { "name": "Nong Chok", "code": "nong_chok", "slug": "nong_chok" },
+            { "name": "Nong Khaem", "code": "nong_khaem", "slug": "nong_khaem" },
+            { "name": "Pathum Wan", "code": "pathum_wan", "slug": "pathum_wan" },
+            { "name": "Phasi Charoen", "code": "phasi_charoen", "slug": "phasi_charoen" },
+            { "name": "Phaya Thai", "code": "phaya_thai", "slug": "phaya_thai" },
+            { "name": "Phra Khanong", "code": "phra_khanong", "slug": "phra_khanong" },
+            { "name": "Phra Nakhon", "code": "phra_nakhon", "slug": "phra_nakhon" },
+            { "name": "Pom Prap Sattru Phai", "code": "pom_prap_sattru_phai", "slug": "pom_prap_sattru_phai" },
+            { "name": "Prawet", "code": "prawet", "slug": "prawet" },
+            { "name": "Rat Burana", "code": "rat_burana", "slug": "rat_burana" },
+            { "name": "Ratchathewi", "code": "ratchathewi", "slug": "ratchathewi" },
+            { "name": "Sai Mai", "code": "sai_mai", "slug": "sai_mai" },
+            { "name": "Samphanthawong", "code": "samphanthawong", "slug": "samphanthawong" },
+            { "name": "Saphan Sung", "code": "saphan_sung", "slug": "saphan_sung" },
+            { "name": "Satho", "code": "satho", "slug": "satho" },
+            { "name": "Suan Luang", "code": "suan_luang", "slug": "suan_luang" },
+            { "name": "Taling Chan", "code": "taling_chan", "slug": "taling_chan" },
+            { "name": "Thawi Watthana", "code": "thawi_watthana", "slug": "thawi_watthana" },
+            { "name": "Thon Buri", "code": "thon_buri", "slug": "thon_buri" },
+            { "name": "Thung Khru", "code": "thung_khru", "slug": "thung_khru" },
+            { "name": "Wang Thonglang", "code": "wang_thonglang", "slug": "wang_thonglang" },
+            { "name": "Watthana", "code": "watthana", "slug": "watthana" },
+            { "name": "Yan Nawa", "code": "yan_nawa", "slug": "yan_nawa" }
+          ]
+        }
+      ]
+    },
+    { "name": "Japan",    "code": "jp", "slug": "japan"},
+    { "name": "USA",      "code": "us", "slug": "us"}
+  ]
+}
+
+

@@ -1,0 +1,39 @@
+type Country @model {
+  id: ID! @isUnique
+  name: String! @isUnique
+  code: String! @isUnique
+  slug: String! @isUnique
+
+  createdAt: DateTime!
+  updatedAt: DateTime!
+
+  provinces: [Province!]! @relation(name: "CountryProvinces")
+  condominiums: [Condominium!]! @relation(name: "CountryCondominiums")
+}
+
+type Province @model {
+  id: ID! @isUnique
+  name: String! @isUnique
+  code: String! @isUnique
+  slug: String! @isUnique
+
+  createdAt: DateTime!
+  updatedAt: DateTime!
+
+  country: Country! @relation(name: "CountryProvinces")
+  districts: [District!]! @relation(name: "ProvinceDistricts")
+  condominiums: [Condominium!]! @relation(name: "ProvinceCondominiums")
+}
+
+type District @model {
+  id: ID! @isUnique
+  name: String! @isUnique
+  code: String! @isUnique
+  slug: String! @isUnique
+
+  createdAt: DateTime!
+  updatedAt: DateTime!
+
+  province: Province! @relation(name: "ProvinceDistricts")
+  condominiums: [Condominium!]! @relation(name: "DistrictCondominiums")
+}

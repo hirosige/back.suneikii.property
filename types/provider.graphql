@@ -1,0 +1,17 @@
+type Provider @model {
+  id: ID! @isUnique
+  name: String!
+  introduction: String
+  siteUrl: String
+  address: String
+  tel: String!
+  fax: String
+  certificate: String
+  workingTime: String
+  holidays: String
+
+  createdAt: DateTime!
+  updatedAt: DateTime!
+
+  condominiums: [Condominium!]! @relation(name: "ProviderCondominiums")
+}

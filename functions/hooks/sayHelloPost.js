@@ -3,5 +3,7 @@ export default event => {
 
   console.log(event.data.description)
 
-  return event
+  return {
+    event
+  }
 }
